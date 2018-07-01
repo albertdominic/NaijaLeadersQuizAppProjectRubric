@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Naija Leaders Quiz App Project Rubric</string>
+    <string name="shehu_shagari"> Alhaji Shehu Shagari</string>
+    <string name="tafawa_balewa">Alhaji Sir Tafawa Balewa</string>
+    <string name="olusegun_obasanjo">Chief Olusegun Obasanjo</string>
+    <string name="goodluck_jonathan">Dr Goodluck Jonathan</string>
+    <string name="nnamdi_azikiwe">Dr Nnamdi Azikiwe</string>
+    <string name="ernest_shonekan">Ernest Shonekan</string>
+    <string name="ibrahim_babaginda">Gen Ibrahim Babaginda</string>
+    <string name="muritala_mohammed">Gen Muritala Muhammed</string>
+    <string name="sani_abacha">Gen Sani Abacha</string>
+    <string name="yakubu_gowon">Gen Yakubu Gowon</string>
+    <string name="aguiyi_ironsi">Major Gen Aguiyi Ironsi</string>
+    <string name="buhari_military">Major Gen Muhammadu Buhari</string>
+    <string name="obasanjo_military">Major Gen Olusegun Obasanjo</string>
+    <string name="buhari_democratic">President Muhammadu buhari</string>
+</resources>
