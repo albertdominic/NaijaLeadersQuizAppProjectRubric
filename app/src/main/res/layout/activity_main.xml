@@ -88,7 +88,7 @@
                 android:layout_marginBottom="16dp"
                 android:background="#C5E1A6"
                 android:hint="Enter Your Name"
-                android:inputType="textCapCharacters"
+                android:inputType="textCapSentences"
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
 
@@ -591,6 +591,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
                 card_view:cardBackgroundColor="#ffffff"
                 card_view:cardCornerRadius="20dp"
                 card_view:cardElevation="10dp"

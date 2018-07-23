@@ -16,12 +16,12 @@ public class MainActivity extends AppCompatActivity {
     int totalCorrectAnswers = 0;
     int totalAttemptedQuestions = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
 
     /**
      * this method is called when the submit quiz button is clicked
@@ -31,77 +31,249 @@ public class MainActivity extends AppCompatActivity {
     public void quizSummary(View view) {
 
         /**
+         * This Section Makes Sure that the Value of Attempted Questions and Correct Answers are Set to default befor any other changes
+         * This will prevent them from doubling each time the submit quiz button is clicked
+         */
+        totalCorrectAnswers -= totalCorrectAnswers;
+        totalAttemptedQuestions -= totalAttemptedQuestions;
+
+        /**
          * This Section Counts the radio buttons checked and displays the number on a TextView
          */
 
 
-        //Check if any radio button in the question one group is checked
-        RadioGroup questionOneOptions = (RadioGroup) findViewById(R.id.questionOneRadioGroup);
-        boolean questionOneGroups = questionOneOptions.isEnabled();
-        if (questionOneGroups) {
+        //Check if any radio button in the question one radio group is checked
+
+        //gets the checked state of option one in question one and then store the check state in a variable
+        RadioButton optionOneForQuestionOne = (RadioButton) findViewById(R.id.question1option1);
+        boolean optionOneQuestionOne = optionOneForQuestionOne.isChecked();
+
+        //gets the checked state of option two in question one and then store the check state in a variable
+        RadioButton optionTwoForQuestionOne = (RadioButton) findViewById(R.id.question1option2Correct);
+        boolean optionTwoQuestionOne = optionTwoForQuestionOne.isChecked();
+
+        //gets the checked state of option three in question one and then store the check state in a variable
+        RadioButton optionThreeForQuestionOne = (RadioButton) findViewById(R.id.question1option3);
+        boolean optionThreeQuestionOne = optionThreeForQuestionOne.isChecked();
+
+        //gets the checked state of option four in question one and then store the check state in a variable
+        RadioButton optionFourForQuestionOne = (RadioButton) findViewById(R.id.question1option3);
+        boolean optionFourQuestionOne = optionFourForQuestionOne.isChecked();
+
+        //this section increases the TotalAttemptedQuestions by one if any of the radio button in question one is checked
+        if (optionOneQuestionOne || optionTwoQuestionOne || optionThreeQuestionOne || optionFourQuestionOne) {
             totalAttemptedQuestions += 1;
         }
 
-        //Check if any radio button in the question two group is checked
-        RadioGroup questionTwoOptions = (RadioGroup) findViewById(R.id.questionTwoRadioGroup);
-        boolean questionTwoGroups = questionTwoOptions.isEnabled();
-        if (questionTwoGroups) {
+
+
+        //Check if any radio buttons in the question two radio group is checked
+
+        //gets the checked state of option one in question two and then store the check state in a variable
+        RadioButton optionOneForQuestionTwo = (RadioButton) findViewById(R.id.question2option1Correct);
+        boolean optionOneQuestionTwo = optionOneForQuestionTwo.isChecked();
+
+        //gets the checked state of option two in question two and then store the check state in a variable
+        RadioButton optionTwoForQuestionTwo = (RadioButton) findViewById(R.id.question2option2);
+        boolean optionTwoQuestionTwo = optionTwoForQuestionTwo.isChecked();
+
+        //gets the checked state of option three in question two and then store the check state in a variable
+        RadioButton optionThreeForQuestionTwo = (RadioButton) findViewById(R.id.question2option3);
+        boolean optionThreeQuestionTwo = optionThreeForQuestionTwo.isChecked();
+
+        //gets the checked state of option four in question two and then store the check state in a variable
+        RadioButton optionFourForQuestionTwo = (RadioButton) findViewById(R.id.question2option4);
+        boolean optionFourQuestionTwo = optionFourForQuestionTwo.isChecked();
+
+        //this section increases the totalAttemptedQuestions by one if any of the radio button in question two is checked
+        if (optionOneQuestionTwo || optionTwoQuestionTwo || optionThreeQuestionTwo || optionFourQuestionTwo) {
             totalAttemptedQuestions += 1;
         }
 
-        //Check if any radio button in the question three group is checked
-        RadioGroup questionThreeOptions = (RadioGroup) findViewById(R.id.questionThreeRadioGroup);
-        boolean questionThreeGroups = questionThreeOptions.isEnabled();
-        if (questionThreeGroups) {
+
+        //Check if any radio button in the question three radio group is checked
+
+        //gets the checked state of option one in question three and then store the check state in a variable
+        RadioButton optionOneForQuestionThree = (RadioButton) findViewById(R.id.question3option1);
+        boolean optionOneQuestionThree = optionOneForQuestionThree.isChecked();
+
+        //gets the checked state of option two in question three and then store the check state in a variable
+        RadioButton optionTwoForQuestionThree = (RadioButton) findViewById(R.id.question3option2);
+        boolean optionTwoQuestionThree = optionTwoForQuestionThree.isChecked();
+
+        //gets the checked state of option three in question three and then store the check state in a variable
+        RadioButton optionThreeForQuestionThree = (RadioButton) findViewById(R.id.question3option3);
+        boolean optionThreeQuestionThree = optionThreeForQuestionThree.isChecked();
+
+        //gets the checked state of option four in question three and then store the check state in a variable
+        RadioButton optionFourForQuestionThree = (RadioButton) findViewById(R.id.question3option4Correct);
+        boolean optionFourQuestionThree = optionFourForQuestionThree.isChecked();
+
+        //this section increases the totalAttemptedQuestion by one if any of the radio button in question three is checked
+        if (optionOneQuestionThree || optionTwoQuestionThree || optionThreeQuestionThree || optionFourQuestionThree) {
             totalAttemptedQuestions += 1;
         }
 
-        //Check if any radio button in the question four group is checked
-        RadioGroup questionFourOptions = (RadioGroup) findViewById(R.id.questionFourRadioGroup);
-        boolean questionFourGroups = questionFourOptions.isEnabled();
-        if (questionFourGroups) {
+
+        //Check if any radio button in the question four radio group is checked
+
+        //gets the checked state of option one in question four and then store the check state in a variable
+        RadioButton optionOneForQuestionFour = (RadioButton) findViewById(R.id.question4option1);
+        boolean optionOneQuestionFour = optionOneForQuestionFour.isChecked();
+
+        //gets the checked state of option two in question four and then store the check state in a variable
+        RadioButton optionTwoForQuestionFour = (RadioButton) findViewById(R.id.question4option2Correct);
+        boolean optionTwoQuestionFour = optionTwoForQuestionFour.isChecked();
+
+        //gets the checked state of option three in question four and then store the check state in a variable
+        RadioButton optionThreeForQuestionFour = (RadioButton) findViewById(R.id.question4option3);
+        boolean optionThreeQuestionFour = optionThreeForQuestionFour.isChecked();
+
+        //gets the checked state of option four in question four and then store the check state in a variable
+        RadioButton optionFourForQuestionFour = (RadioButton) findViewById(R.id.question4option4);
+        boolean optionFourQuestionFour = optionFourForQuestionFour.isChecked();
+
+        //this section increases the TotalAttemptedQuestions by one if any of the radio button in question four is checked
+        if (optionOneQuestionFour || optionTwoQuestionFour || optionThreeQuestionFour || optionFourQuestionFour) {
             totalAttemptedQuestions += 1;
         }
 
-        //Check if any radio button in the question five group is checked
-        RadioGroup questionFiveOptions = (RadioGroup) findViewById(R.id.questionFiveRadioGroup);
-        boolean questionFiveGroups = questionFiveOptions.isEnabled();
-        if (questionFiveGroups) {
+        //Check if any radio button in the question five radio group is checked
+
+        //gets the checked state of option one in question five and then store the check state in a variable
+        RadioButton optionOneForQuestionFive = (RadioButton) findViewById(R.id.question5option1Correct);
+        boolean optionOneQuestionFive = optionOneForQuestionFive.isChecked();
+
+        //gets the checked state of option two in question five and then store the check state in a variable
+        RadioButton optionTwoForQuestionFive = (RadioButton) findViewById(R.id.question5option2);
+        boolean optionTwoQuestionFive = optionTwoForQuestionFive.isChecked();
+
+        //gets the checked state of option three in question five and then store the check state in a variable
+        RadioButton optionThreeForQuestionFive = (RadioButton) findViewById(R.id.question5option3);
+        boolean optionThreeQuestionFive = optionThreeForQuestionFive.isChecked();
+
+        //gets the checked state of option four in question five and then store the check state in a variable
+        RadioButton optionFourForQuestionFive = (RadioButton) findViewById(R.id.question5option4);
+        boolean optionFourQuestionFive = optionFourForQuestionFive.isChecked();
+
+        //this section increases the totalAttemptedQuestion by one if any of the radio button in question five is checked
+        if (optionOneQuestionFive || optionTwoQuestionFive || optionThreeQuestionFive || optionFourQuestionFive) {
             totalAttemptedQuestions += 1;
         }
 
         //Check if any radio button in the question six group is checked
-        RadioGroup questionSixOptions = (RadioGroup) findViewById(R.id.questionSixRadioGroup);
-        boolean questionSixGroups = questionSixOptions.isEnabled();
-        if (questionSixGroups) {
+
+        //gets the checked state of option one in question six and then store the check state in a variable
+        RadioButton optionOneForQuestionSix = (RadioButton) findViewById(R.id.question6option1);
+        boolean optionOneQuestionSix = optionOneForQuestionSix.isChecked();
+
+        //gets the checked state of option two in question six and then store the check state in a variable
+        RadioButton optionTwoForQuestionSix = (RadioButton) findViewById(R.id.question6option2);
+        boolean optionTwoQuestionSix = optionTwoForQuestionSix.isChecked();
+
+        //gets the checked state of option three in question six and then store the check state in a variable
+        RadioButton optionThreeForQuestionSix = (RadioButton) findViewById(R.id.question6option3Correct);
+        boolean optionThreeQuestionSix = optionThreeForQuestionSix.isChecked();
+
+        //gets the checked state of option four in question six and then store the check state in a variable
+        RadioButton optionFourForQuestionSix = (RadioButton) findViewById(R.id.question6option4);
+        boolean optionFourQuestionSix = optionFourForQuestionSix.isChecked();
+
+        //this section increases the totalAttemptedQuestion by one if any of the radio button in question six is checked
+        if (optionOneQuestionSix || optionTwoQuestionSix || optionThreeQuestionSix || optionFourQuestionSix) {
             totalAttemptedQuestions += 1;
         }
 
         //Check if any radio button in the question seven group is checked
-        RadioGroup questionSevenOptions = (RadioGroup) findViewById(R.id.questionSevenRadioGroup);
-        boolean questionSevenGroups = questionSevenOptions.isEnabled();
-        if (questionSevenGroups) {
+
+        //gets the checked state of option one in question seven and then store the check state in a variable
+        RadioButton optionOneForQuestionSeven = (RadioButton) findViewById(R.id.question7option1);
+        boolean optionOneQuestionSeven = optionOneForQuestionSeven.isChecked();
+
+        //gets the checked state of option two in question seven and then store the check state in a variable
+        RadioButton optionTwoForQuestionSeven = (RadioButton) findViewById(R.id.question7option2Correct);
+        boolean optionTwoQuestionSeven = optionTwoForQuestionSeven.isChecked();
+
+        //gets the checked state of option three in question seven and then store the check state in a variable
+        RadioButton optionThreeForQuestionSeven = (RadioButton) findViewById(R.id.question7option3);
+        boolean optionThreeQuestionSeven = optionThreeForQuestionSeven.isChecked();
+
+        //gets the checked state of option four in question seven and then store the check state in a variable
+        RadioButton optionFourForQuestionSeven = (RadioButton) findViewById(R.id.question7option4);
+        boolean optionFourQuestionSeven = optionFourForQuestionSeven.isChecked();
+
+        //this section increases the totalAttemptedQuestion by one if any of the radio button in question seven is checked
+        if (optionOneQuestionSeven || optionTwoQuestionSeven || optionThreeQuestionSeven || optionFourQuestionSeven) {
             totalAttemptedQuestions += 1;
         }
 
         //Check if any radio button in the question eight group is checked
-        RadioGroup questionEightOptions = (RadioGroup) findViewById(R.id.questionEightRadioGroup);
-        boolean questionEightGroups = questionEightOptions.isEnabled();
-        if (questionEightGroups) {
+
+        //gets the checked state of option one in question eight and then store the check state in a variable
+        RadioButton optionOneForQuestionEight = (RadioButton) findViewById(R.id.question8option1);
+        boolean optionOneQuestionEight = optionOneForQuestionEight.isChecked();
+
+        //gets the checked state of option two in question eight and then store the check state in a variable
+        RadioButton optionTwoForQuestionEight = (RadioButton) findViewById(R.id.question8option2);
+        boolean optionTwoQuestionEight = optionTwoForQuestionEight.isChecked();
+
+        //gets the checked state of option three in question eight and then store the check state in a variable
+        RadioButton optionThreeForQuestionEight = (RadioButton) findViewById(R.id.question8option3);
+        boolean optionThreeQuestionEight = optionThreeForQuestionEight.isChecked();
+
+        //gets the checked state of option four in question eight and then store the check state in a variable
+        RadioButton optionFourForQuestionEight = (RadioButton) findViewById(R.id.question8option4Correct);
+        boolean optionFourQuestionEight = optionFourForQuestionEight.isChecked();
+
+        //this section increases the totalAttemptedQuestion by one if any of the radio button in question eight is checked
+        if (optionOneQuestionEight || optionTwoQuestionEight || optionThreeQuestionEight || optionFourQuestionEight) {
             totalAttemptedQuestions += 1;
         }
 
         //Check if any radio button in the question nine group is checked
-        RadioGroup questionNineOptions = (RadioGroup) findViewById(R.id.questionNineRadioGroup);
-        boolean questionNineGroups = questionNineOptions.isEnabled();
-        if (questionNineGroups) {
+
+        //gets the checked state of option one in question nine and then store the check state in a variable
+        RadioButton optionOneForQuestionNine = (RadioButton) findViewById(R.id.question9option1);
+        boolean optionOneQuestionNine = optionOneForQuestionNine.isChecked();
+
+        //gets the checked state of option two in question nine and then store the check state in a variable
+        RadioButton optionTwoForQuestionNine = (RadioButton) findViewById(R.id.question9option2);
+        boolean optionTwoQuestionNine = optionTwoForQuestionNine.isChecked();
+
+        //gets the checked state of option three in question nine and then store the check state in a variable
+        RadioButton optionThreeForQuestionNine = (RadioButton) findViewById(R.id.question9option3Correct);
+        boolean optionThreeQuestionNine = optionThreeForQuestionNine.isChecked();
+
+        //gets the checked state of option four in question nine and then store the check state in a variable
+        RadioButton optionFourForQuestionNine = (RadioButton) findViewById(R.id.question9option4);
+        boolean optionFourQuestionNine = optionFourForQuestionNine.isChecked();
+
+        //this section increases the totalAttemptedQuestion by one if any of the radio button in question nine is checked
+        if (optionOneQuestionNine || optionTwoQuestionNine || optionThreeQuestionNine || optionFourQuestionNine) {
             totalAttemptedQuestions += 1;
         }
 
+
         //Check if any radio button in the question ten group is checked
-        RadioGroup questionTenOptions = (RadioGroup) findViewById(R.id.questionTenRadioGroup);
-        boolean questionTenGroups = questionTenOptions.isEnabled();
-        if (questionTenGroups) {
+
+        //gets the checked state of option one in question ten and then store the check state in a variable
+        RadioButton optionOneForQuestionTen = (RadioButton) findViewById(R.id.question10option1);
+        boolean optionOneQuestionTen = optionOneForQuestionTen.isChecked();
+
+        //gets the checked state of option two in question ten and then store the check state in a variable
+        RadioButton optionTwoForQuestionTen = (RadioButton) findViewById(R.id.question10option2);
+        boolean optionTwoQuestionTen = optionTwoForQuestionTen.isChecked();
+
+        //gets the checked state of option three in question ten and then store the check state in a variable
+        RadioButton optionThreeForQuestionTen = (RadioButton) findViewById(R.id.question10option3Correct);
+        boolean optionThreeQuestionTen = optionThreeForQuestionTen.isChecked();
+
+        //gets the checked state of option four in question ten and then store the check state in a variable
+        RadioButton optionFourForQuestionTen = (RadioButton) findViewById(R.id.question10option4);
+        boolean optionFourQuestionTen = optionFourForQuestionTen.isChecked();
+
+        //this section increases the totalAttemptedQuestion by one if any of the radio button in question ten is checked
+        if (optionOneQuestionTen || optionTwoQuestionTen || optionThreeQuestionTen || optionFourQuestionTen) {
             totalAttemptedQuestions += 1;
         }
 
@@ -116,78 +288,69 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Check if the correct answer was selected for question one
-        RadioButton questionOneCorrectAnswer = (RadioButton) findViewById(R.id.question1option2Correct);
-        boolean questionOneCorrectOption = questionOneCorrectAnswer.isChecked();
-        if (questionOneCorrectOption) {
+
+        if (optionTwoQuestionOne) {
             totalCorrectAnswers += 1;
         }
 
         //Check if the correct answer was selected for question two
-        RadioButton questionTwoCorrectAnswer = (RadioButton) findViewById(R.id.question2option1Correct);
-        boolean questionTwoCorrectOption = questionTwoCorrectAnswer.isChecked();
-        if (questionTwoCorrectOption) {
+
+        if (optionOneQuestionTwo) {
             totalCorrectAnswers += 1;
         }
 
         //Check if the correct answer was selected for question three
-        RadioButton questionThreeCorrectAnswer = (RadioButton) findViewById(R.id.question3option4Correct);
-        boolean questionThreeCorrectOption = questionThreeCorrectAnswer.isChecked();
-        if (questionThreeCorrectOption) {
+
+        if (optionFourQuestionThree) {
             totalCorrectAnswers += 1;
         }
 
         //Check if the correct answer was selected for question four
-        RadioButton questionFourCorrectAnswer = (RadioButton) findViewById(R.id.question4option2Correct);
-        boolean questionFourCorrectOption = questionFourCorrectAnswer.isChecked();
-        if (questionFourCorrectOption) {
+
+        if (optionTwoQuestionFour) {
             totalCorrectAnswers += 1;
         }
 
         //Check if the correct answer was selected for question five
-        RadioButton questionFiveCorrectAnswer = (RadioButton) findViewById(R.id.question5option1Correct);
-        boolean questionFiveCorrectOption = questionFiveCorrectAnswer.isChecked();
-        if (questionFiveCorrectOption) {
+
+        if (optionOneQuestionFive) {
             totalCorrectAnswers += 1;
         }
 
         //Check if the correct answer was selected for question six
-        RadioButton questionSixCorrectAnswer = (RadioButton) findViewById(R.id.question6option3Correct);
-        boolean questionSixCorrectOption = questionSixCorrectAnswer.isChecked();
-        if (questionSixCorrectOption) {
+
+        if (optionThreeQuestionSix) {
             totalCorrectAnswers += 1;
         }
 
         //Check if the correct answer was selected for question seven
-        RadioButton questionSevenCorrectAnswer = (RadioButton) findViewById(R.id.question7option2Correct);
-        boolean questionSevenCorrectOption = questionSevenCorrectAnswer.isChecked();
-        if (questionSevenCorrectOption) {
+
+        if (optionTwoQuestionSeven) {
             totalCorrectAnswers += 1;
         }
 
         //Check if the correct answer was selected for question eight
-        RadioButton questionEightCorrectAnswer = (RadioButton) findViewById(R.id.question8option4Correct);
-        boolean questionEightCorrectOption = questionEightCorrectAnswer.isChecked();
-        if (questionEightCorrectOption) {
+
+        if (optionFourQuestionEight) {
             totalCorrectAnswers += 1;
         }
 
         //Check if the correct answer was selected for question nine
-        RadioButton questionNineCorrectAnswer = (RadioButton) findViewById(R.id.question9option3Correct);
-        boolean questionNineCorrectOption = questionNineCorrectAnswer.isChecked();
-        if (questionNineCorrectOption) {
+
+        if (optionThreeQuestionNine) {
             totalCorrectAnswers += 1;
         }
 
         //Check if the correct answer was selected for question ten
-        RadioButton questionTenCorrectAnswer = (RadioButton) findViewById(R.id.question10option3Correct);
-        boolean questionTenCorrectOption = questionTenCorrectAnswer.isChecked();
-        if (questionTenCorrectOption) {
+
+        if (optionThreeQuestionTen) {
             totalCorrectAnswers += 1;
         }
 
 
-        //this section displays number of the correct answers in a text view
-
+        /**
+         * this section displays number of the correct answers in a text view
+         */
 
         TextView correctScores = (TextView) findViewById(R.id.quiz_score_text_view);
         correctScores.setText("" + totalCorrectAnswers);
@@ -197,21 +360,27 @@ public class MainActivity extends AppCompatActivity {
          * this section summarises the quiz report and displays it as a toast
          */
 
+        //calculate percentage score
+        //float fractionalScore = totalCorrectAnswers / totalQuestions;
+        //float percentageScore = fractionalScore * 100;
+
 
         //gets player name
         EditText playerNameTextView = (EditText) findViewById(R.id.player_name);
         Editable playerName = playerNameTextView.getText();
-        //calculate percentage score
-        int percentageScore = ((totalCorrectAnswers / totalQuestions) * 100);
-        //create summary message
-        String summary = "Player Name = " + playerName;
-        summary = summary + "\nAttempts = " + totalAttemptedQuestions + "of" + totalQuestions;
-        summary = summary + "\nCorrect Answers = " + totalCorrectAnswers;
-        summary = summary + "\nPercentage = " + percentageScore + "%";
 
+
+        //create summary message
+        String summary = "Player Name : " + playerName;
+        summary = summary + "\nAttempts : " + totalAttemptedQuestions + " of " + totalQuestions;
+        summary = summary + "\nCorrect Answers : " + totalCorrectAnswers;
+        //summary = summary + "\nPercentage Score : " + percentageScore + "%";
+
+        //displays the summary as a toast
         Toast.makeText(this, summary, Toast.LENGTH_LONG).show();
 
 
     }
 
 }
+
