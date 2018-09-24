@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     public void quizSummary(View view) {
 
         /**
-         * This Section Makes Sure that the Value of Attempted Questions and Correct Answers are Set to default befor any other changes
+         * This Section Makes Sure that the Value of Attempted Questions and Correct Answers are Set to default before any other changes
          * This will prevent them from doubling each time the submit quiz button is clicked
          */
         totalCorrectAnswers -= totalCorrectAnswers;
