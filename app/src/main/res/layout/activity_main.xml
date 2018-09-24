@@ -100,8 +100,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
-                card_view:cardCornerRadius="20dp"
                 card_view:cardBackgroundColor="#33691E"
+                card_view:cardCornerRadius="20dp"
                 card_view:cardElevation="10dp"
                 card_view:contentPadding="5dp">
 
@@ -285,7 +285,7 @@
                             android:id="@+id/question3option2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                        android:text="@string/aguiyi_ironsi" />
+                            android:text="@string/aguiyi_ironsi" />
 
                         <RadioButton
                             android:id="@+id/question3option3"
